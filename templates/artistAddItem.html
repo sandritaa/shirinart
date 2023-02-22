@@ -1,0 +1,77 @@
+<!-- inherit from base.html -->
+{% extends 'base.html' %}
+
+<!-- insert content block -->
+{% block body %}
+
+<div class="bg-light text-dark py-sm-5 topbar">
+    <h1 class="mainHeading">Add New Item</h1>
+</div>
+
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <div class="mt-4">
+                <div class="card pb-4">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <p>Item image</p>
+                            <button id="upload_widget" class="customButton">
+                                Choose file
+                            </button>
+
+                            <!-- send post request to server to create new item and update database when added -->
+                            <form action='/artist_add_item' method="POST" class="row g-3 pt-2" id="addItemForm">
+                                <div class="col-12">
+                                    <img class="card-img-top" id="uploadedImage" src="" hidden>
+                                    </img>
+                                    <label for="description" class="form-label">Description</label>
+                                    <input type="text" class="form-control" id="description"
+                                        placeholder="Maximum 50 character" name="description" required minlength='1'
+                                        maxlength='50'>
+                                </div>
+                                <div class="col-12">
+                                    <label for="dimensions" class="form-label">Dimensions</label>
+                                    <input type="text" class="form-control" id="dimensions" placeholder="10x10"
+                                        name="dimensions">
+                                </div>
+                                <div class="col-12">
+                                    <label for="price" class="form-label">Prices (USD)</label>
+                                    <input type="text" class="form-control" id="price" placeholder="20.00" name="price">
+                                </div>
+                                <div class="col-12">
+                                    <label for="Date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="date" placeholder="" name="date"
+                                        required="true">
+                                </div>
+                                <!-- add hidden field since it will be populated when an image is added so that I can send the url as part of the form  -->
+                                <div class="col-12">
+                                    <input type="disabled" class="form-control" id="picture_path_id" placeholder=""
+                                        name="picture_path" hidden>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type='submit' class="btn btn-light customButton" title=" Add an image"
+                                        id='addItemSubmit' disabled>
+                                </div>
+                                <p id="addImageRequired"><i> * Add an image to submit</i></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cloudinary upload widget -->
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript">
+    </script>
+
+    <!-- local upload instantiation -->
+    <script src="/static/js/imageUploadWidget.js" type="text/javascript">
+    </script>
+
+
+    {% endblock %}

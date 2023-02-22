@@ -1,0 +1,80 @@
+<!-- inherit from base.html -->
+{% extends 'base.html' %}
+
+<!-- insert content block -->
+{% block body %}
+
+
+<div class="bg-light text-dark py-sm-5 topbar">
+    <h1 class="mainHeading">Review your cart</h2>
+</div>
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            {% for artist_id in cart_data %}
+            <div class="mt-4">
+                <div class="card bottomBorderCard pb-4" id="{{'cartCard' + '_' + (artist_id) | string}}">
+                    <h5>Sold by {{ cart_data[artist_id][0].artist.fname + ' ' +
+                        cart_data[artist_id][0].artist.lname }}
+                    </h5>
+                    {% for item in cart_data[artist_id] %}
+                    <div class="card noBordersCard" id="{{'cartItemCard' + '_' + (item.item_id) | string}}">
+                        <div class="row g-0 justify-content-start">
+                            <div class="col-md-5">
+                                <img src="{{ item.picture_path }}" class="card-img-top" style="padding-bottom: 10px;">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="card-body">
+                                    <ul>
+                                        <li> <b>Price: </b>${{ item.price }}</li>
+                                        <li> <b>Color: </b> {{ item.color }}</li>
+                                        <li> <b>Item ID: </b> {{ item.item_id}}</li>
+                                        <br>
+                                        <li>
+                                            <button type="button"
+                                                class="removeItemCartButton btn btn-light customButton"
+                                                id="{{'buttonRemoveItem' + '_' + (item.artist_id) | string + '_' + (item.item_id) | string}}">remove
+                                                item
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <p class="card-text pt-3"> <b>Subtotal: </b>${{ cost_data[artist_id] }}</p>
+                </div>
+            </div>
+
+            {% endfor %}
+            <div class="card bottomBorderCard">
+                <div class="row no-gutters justify-content-start">
+
+                    <div class="card-body">
+                        {% if cart_data %}
+
+                        <p id="cartTotalCost"><b>Total: </b> ${{ total_cost }}</p>
+                        <p><i> * Tax not included</i></p>
+                        <p><i> * Free shipping</i></p>
+                        <button type='button' class="shippingButton btn btn-light customButton"> <a
+                                href='/shipping'>proceed
+                                to
+                                checkout</a>
+                        </button>
+                        {% else %}
+                        <h3>Cart is empty</h3>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ajax file -->
+<script src="/static/js/ajax.js"></script>
+
+{% endblock %}

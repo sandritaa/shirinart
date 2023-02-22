@@ -1,0 +1,56 @@
+<!-- inherit from base.html -->
+{% extends 'base.html' %}
+
+<!-- insert content block -->
+{% block body %}
+
+
+<div class="bg-light text-dark py-sm-5 topbar">
+    <h1 class="mainHeading">Payment Details</h1>
+</div>
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <div class="mt-4">
+                <div class="card pb-4">
+                    <div class="card-body">
+                        <!-- send post request to server to create new item and update database when added -->
+                        <form action='/order_review' class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nameOnCard" class="form-label">Name on card *</label>
+                                <input type="text" class="form-control" id="nameOnCard" name="cardname" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="numberOnCard" class="form-label">Card number *</label>
+                                <input type="text" class="form-control" id="numberOnCard" name="cardnum" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="expDate" class="form-label">Expiration date *</label>
+                                <input type="text" class="form-control" id="expDate" placeholder="01/26" name="cardexp"
+                                    required minlength='5' maxlength='5'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="secCode" class="form-label">Security code *</label>
+                                <input type="password" class="form-control" id="secCode" name="seccode" required
+                                    placeholder="123" minlength='3' maxlength='4'>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="button" class="customButton btn btn-light"><a
+                                        href="/billing">back</a></button>
+                                <input type="submit" href='/order_review' class="customButton btn btn-light"
+                                    value="review order">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

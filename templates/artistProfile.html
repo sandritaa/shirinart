@@ -1,0 +1,188 @@
+<!-- inherit from base.html -->
+{% extends 'base.html' %}
+
+<!-- insert content block -->
+{% block body %}
+
+
+<div class="bg-light text-dark py-sm-5 topbar">
+    <h1 class="mainHeading">Welcome {{ artist.fname + ' ' + artist.lname }}</h1>
+</div>
+
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <div class="card bottomBorderCard">
+                <div class="row g-0">
+                    <div class="col-6">
+                        <div class="card p-4 noBordersCard">
+                            <ul>
+                                <li>
+                                    <h3>Account details</h3>
+                                </li>
+                                <li> <b>Name: </b>{{artist.fname + ' ' + artist.lname}}
+                                </li>
+                                <li> <b>Email: </b>{{
+                                    artist.email
+                                    }}
+                                </li>
+                                <li><b>Country: </b>{{ artist.country }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card p-4 noBordersCard">
+                            <ul>
+                                <br>
+                                <li>
+                                    <form action="/" method="POST">
+                                        <input type="submit" class="btn btn-light customButton" value="logout"
+                                            name="logout" />
+                                    </form>
+                                </li>
+                                <br>
+                                <li>
+                                    <button type="'button" class="btn btn-light customButton">
+                                        <a href="/artist_add_item">Add new art</a>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="mb-4">
+            <div class="card pt-4 px-4 noBordersCard">
+                <h3>Order History</h3>
+                {% for order in artist.order %}
+                <div class="my-2">
+                    <div class="card p-4 ">
+                        <ul: style="margin:0; padding: 0;">
+                            <li><b>Order Number: </b>{{
+                                order.order_id
+                                }}</li>
+                            <li><b>Customer: </b>{{
+                                    order.fname + ' ' + order.lname
+                                    }}</li>
+                            <li> <b>Date: </b>{{
+                                order.date.strftime('%Y-%m-%d')
+                                }}</li>
+                            <li> <b>Total Order (including Tax): </b>${{
+                                order.total
+                                }}
+                            </li>
+                            <br>
+                            <li> <b>Status: </b>
+                                <select class="customButton statusButton"
+                                    id="{{ 'status' + '_' + (order.order_id) | string }}" placeholder="status">
+                                    <option name='order received' value='order received' {%
+                                        if
+                                        order.status=='order received'
+                                        %}selected{%
+                                        endif
+                                        %}>order
+                                        received</option>
+                                    <option name='preparing' value='preparing' {%
+                                        if
+                                        order.status=='preparing'
+                                        %}selected{%
+                                        endif
+                                        %}>
+                                        preparing
+                                    </option>
+                                    <option name='on the way' value='on the way' {%
+                                        if
+                                        order.status=='on the way'
+                                        %}selected{%
+                                        endif
+                                        %}>on
+                                        the
+                                        way</option>
+                                    <option name='sent' value='sent' {%
+                                        if
+                                        order.status=='sent'
+                                        %}selected{%
+                                        endif
+                                        %}>sent</option>
+                                    <option name='delayed' value='delayed' {%
+                                        if
+                                        order.status=='delayed'
+                                        %}selected{%
+                                        endif
+                                        %}>delayed
+                                    </option>
+                                    <option name='delivered' value='delivered' {%
+                                        if
+                                        order.status=='delivered'
+                                        %}selected{%
+                                        endif
+                                        %}>
+                                        delivered
+                                    </option>
+                                </select>
+                            </li>
+                            <br>
+                            {% for item in order.item %}
+                            </ul>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="{{ item.picture_path }}" class="card-img-top-thumbnail"
+                                        style="padding-bottom: 3px;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li> <b>Item Price: </b>${{
+                                                item.price
+                                                }}
+                                            </li>
+                                            <li> <b>Color: </b> {{ item.color }}
+                                            </li>
+                                            <li> <b>Item ID: </b> {{
+                                                item.item_id}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="mb-4">
+            <div class="card pt-4 px-4 noBordersCard">
+                <h3>Current Art</h3>
+                {% for item in artist.item %}
+                {% if not item.order_id %}
+                <div class="my-2" id="{{'removeItemCard' + '_' + (item.item_id) | string}}">
+                    <div class="card pt-4 px-4">
+                        <img class="card-img-top" src="{{ item.picture_path }}">
+                        <div class="card-body">
+                            <button class="customButton btn btn-light removeItemButton"
+                                id="{{'removeItemButton' + '_' + (item.item_id) | string}}" type="button">remove
+                                item</button>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Ajax file -->
+    <script src="/static/js/ajax.js"></script>
+
+    {% endblock %}

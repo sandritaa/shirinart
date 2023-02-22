@@ -1,0 +1,99 @@
+{
+    "artists": [
+        {
+            "fname": "Shirin",
+            "lname": "Haghi",
+            "email": "shirin@gmail.com",
+            "password": "testtest",
+            "country": "Persia",
+            "alias": "shirin",
+            "about": "I am a young Persian artist, with a passion for drawing mandalas. I specialize in traditional Persian patterns and symbols, and my intricate works evoke reflection and introspection. I am constantly pushing the boundaries of mandala art and exploring new possibilities in this meditative art form. I am excited to share my art with the world and see where my talent will take me in the future.",
+            "profile_pic": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s1_w9pcma.jpg"
+        }
+    ],
+    "customers": [
+        {
+            "fname": "John",
+            "lname": "Doe",
+            "email": "john@gmail.com",
+            "phone": "990-165-0100",
+            "password": "testtest"
+        },
+        {
+            "fname": "Jane",
+            "lname": "Smith",
+            "email": "hane@gmail.com",
+            "phone": "268-342-8970",
+            "password": "testtest"
+        },
+        {
+            "fname": "Bertullio",
+            "lname": "Tomide",
+            "email": "bertullio@gmail.com",
+            "phone": "246-589-8124",
+            "password": "testtest"
+        }
+    ],
+    "items": [
+        {
+            "description": "This mandala art piece is created with vibrant hues of blue, green, and yellow using fine-tipped markers and a compass for precision geometric shapes.",
+            "dimensions": "16x16",
+            "price": 30.00,
+            "date": "2022-12-07",
+            "color": "Green",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s1_w9pcma.jpg",
+            "artist_id": 1
+        },
+        {
+            "description": "Handpainted mandala art with a vibrant color palette and intricate patterns created using fine brushwork for a mesmerizing and harmonious masterpiece",
+            "dimensions": "20x20",
+            "price": 45.00,
+            "date": "2022-08-30",
+            "color": "Blue",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s2_xcj7gu.jpg",
+            "artist_id": 1
+        },
+        {
+            "description": "Elegant handpainted mandala art with a subtle color palette and delicate patterns created using a fine brush and ink for a serene masterpiece",
+            "dimensions": "10x10",
+            "price": 25.00,
+            "date": "2022-04-24",
+            "color": "Red",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s4_pnfdae.jpg",
+            "artist_id": 1
+        },
+        {
+            "description": "Intricate handpainted mandala art featuring a harmonious blend of colors and patterns crafted using traditional persian painting techniques",
+            "dimensions": "24x24",
+            "price": 40.00,
+            "date": "2022-07-02",
+            "color": "Black",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s5_ehuvpn.jpg",
+            "artist_id": 1
+        },
+        {
+            "description": "Handpainted mandala art with bold hues and geometric patterns created using stencils and a variety of mark-making tools for a striking visual impact",
+            "dimensions": "30x45",
+            "price": 30.00,
+            "date": "2022-01-18",
+            "color": "Turquoise",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s6_dpgaur.jpg",
+            "artist_id": 1
+        },
+        {
+            "description": "This mandala art piece is created with vibrant hues of blue, gold, and red using fine-tipped markers and a compass for precision geometric shapes.",
+            "dimensions": "40x40",
+            "price": 80.00,
+            "date": "2022-01-18",
+            "color": "Blue",
+            "in_stock": true,
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674795796/IMG_4443_ipfofg.jpg",
+            "artist_id": 1
+        }
+    ]
+}
