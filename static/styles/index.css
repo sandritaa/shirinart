@@ -23,17 +23,17 @@ h5 {
   font-size: 18px;
 }
 
-.bodyContent {
+/* .bodyContent {
   padding-left: 200px;
-}
+} */
 
-.navbar-fixed-left {
+/* .navbar-fixed-left {
   width: 200px;
   position: fixed;
   border-radius: 0;
   height: 100%;
   margin-right: 0px;
-}
+} */
 
 .navbar a:active,
 .navbar a:hover {

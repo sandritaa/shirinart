@@ -1,4 +1,4 @@
-from model import connect_to_db, db, Customer, Artist, Item, FavoriteItem, CartItem, FavoriteArtist, Order
+from model import connect_to_db, db, Customer, Artist, Item, FavoriteItem, CartItem, Order
 from sqlalchemy import func
 
 #####################################################################
