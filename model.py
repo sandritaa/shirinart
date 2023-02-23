@@ -185,7 +185,7 @@ class Order(db.Model):
         return f'<Order order_id={self.order_id} date={self.date} total={self.total} status={self.status} transaction_id={self.transaction_id} fname={self.fname} lname={self.lname} city={self.city} state={self.state} zipcode={self.zipcode} country={self.country} email={self.email} phone={self.phone}>'
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///galleriadb", echo=True):
+def connect_to_db(flask_app, db_uri="postgresql:///mandalartdb", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

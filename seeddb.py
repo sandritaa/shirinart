@@ -7,8 +7,8 @@ import crud
 
 
 # Drop and create db
-os.system('dropdb galleriadb')
-os.system('createdb galleriadb')
+os.system('dropdb mandalartdb')
+os.system('createdb mandalartdb')
 
 
 # Connect to the db and create tables
