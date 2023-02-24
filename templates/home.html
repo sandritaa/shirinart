@@ -3,9 +3,7 @@
 
 <!-- insert content block -->
 {% block body %}
-<div class="text-dark py-sm-5 topbar">
-    <h1 class="mainHeading">shirin haghi</h1>
-</div>
+
 
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
@@ -32,12 +30,9 @@
     </button>
 </div>
 {% for artist in artists %}
-<!-- <div class="bg-light text-dark py-sm-5 topbar">
-    <h1 class="mainHeading">{{ artist.fname + ' ' + artist.lname }}</h1>
-</div> -->
 <div class="container pt-5">
     <h3>Welcome</h3>
-    <p class="aboutArtist lead my-4">{{ artist.about }}</p>
+    <p class="aboutArtist lead my-4">{{ artist.intro }}</p>
 </div>
 
 {% endfor %}
@@ -57,12 +52,13 @@
                     <p>{{item.description}}</p>
                     <p>{{ item.dimensions}}</p>
 
-                    <button type="button" id='{{ "buttonLike" + "_" + (item.item_id) | string }}'
-                        class='itemLikeButton customButton btn btn-light'> {{
-                    button_like_label[item.item_id] }}</button>
+
                     <button type="button" id='{{ "buttonCart" + "_" + (item.item_id) | string }}'
                         class="itemCartButton customButton btn btn-light">{{
                     button_cart_label[item.item_id] }}</button>
+                    <button type="button" id='{{ "buttonLike" + "_" + (item.item_id) | string }}'
+                        class='itemLikeButton likeButtonCustom btn btn-light'> {{
+                button_like_label[item.item_id] }}</button>
                 </div>
             </div>
         </div>
@@ -71,17 +67,35 @@
         {% endfor %}
     </div>
 </div>
-<!-- 
-<div class="container pt-5">
 
+<div class="container pt-5">
     <h3>About me</h3>
-</div> -->
+    <br>
+    <!-- <div class="card mb-3" style="max-width: 540px;"> -->
+    <div class="row g-0">
+        <div class="col-md-5">
+            <img src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677202595/Screenshot_2023-02-23_at_5.34.03_PM_amcsqr.png"
+                class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-7 d-flex align-items-center">
+            <div class="card-body">
+                <!-- <h5 class="card-title">About me</h5> -->
+                {% for artist in artists %}
+                <p class="aboutArtist lead my-4">{{ artist.about }}</p>
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
 
 
 <div class="container pt-5">
     <h3>Contact me</h3>
     <!-- <div class="row justify-content-center"> -->
-    <div class="col-5">
+    <div class="col-5 ">
         <div class="mt-4">
             <div class="card pb-4">
                 <div class="card-body">

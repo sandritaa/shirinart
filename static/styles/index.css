@@ -98,6 +98,19 @@ h5 {
   color: rgb(0, 0, 0) !important;
 }
 
+
+.itemLikeButton {
+  border: 0;
+  background-color: white;
+  size: 500%;
+  margin-left: 54%;
+}
+
+.likeButtonCustom:hover {
+  color: rgb(171, 171, 171);
+
+}
+
 .bottomBorderCard {
   border-top: 0;
   border-left: 0;
@@ -178,4 +191,8 @@ ul {
 
 .topbar {
   background-color: white;
+}
+
+.center-text {
+  text-align: left;
 }

@@ -26,7 +26,7 @@ with open("static/data/mockdata.json", "r") as json_file:
 artists = mockdata['artists']
 for artist in artists:
     db.session.add(crud.create_artist_profile(fname=artist['fname'], lname=artist['lname'], email=artist['email'], password=artist['password'],
-                   country=artist['country'], alias=artist['alias'], about=artist['about'], profile_pic=artist['profile_pic']))
+                   country=artist['country'], alias=artist['alias'], about=artist['about'], profile_pic=artist['profile_pic'], intro=artist['intro']))
 db.session.commit()
 
 # Seed customers in database

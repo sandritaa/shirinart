@@ -65,7 +65,7 @@ def get_favitem_button_label(artist, session):
     for item in artist.item:
 
         # for each item, add a label with an item_id as the key of a dictionary and set it 'like'
-        button_favitem_label[item.item_id] = 'like'
+        button_favitem_label[item.item_id] = '♡'
 
         # go through every favitem of a specific item
         for favitem in item.favitem:
@@ -74,7 +74,7 @@ def get_favitem_button_label(artist, session):
             if session.get('customer_id', None) == favitem.customer_id:
 
                 # if its is, set the value in the dictionary of the key item_id to 'unlike'
-                button_favitem_label[favitem.item_id] = 'unlike'
+                button_favitem_label[favitem.item_id] = '❤️'
 
     return button_favitem_label
 

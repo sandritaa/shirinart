@@ -57,9 +57,9 @@ def get_artist_by_alias(alias):
 
 
 # create artist profile to seed database
-def create_artist_profile(fname, lname, email, password, country, alias, about, profile_pic):
+def create_artist_profile(fname, lname, email, password, country, alias, about, profile_pic, intro):
     return Artist(fname=fname, lname=lname, email=email, password=password, country=country,
-                  alias=alias, about=about, profile_pic=profile_pic)
+                  alias=alias, about=about, profile_pic=profile_pic, intro=intro)
 
 
 #####################################################################

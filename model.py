@@ -46,6 +46,7 @@ class Artist(db.Model):
     alias = db.Column(db.String)
     about = db.Column(db.Text)
     profile_pic = db.Column(db.String)
+    intro = db.Column(db.String)
 
     # add relationships
     item = db.relationship('Item', back_populates='artist')
@@ -54,7 +55,7 @@ class Artist(db.Model):
     # class representation
 
     def __repr__(self):
-        return f'<Artist artist_id={self.artist_id} fname={self.fname} lname={self.lname} email={self.email} country={self.country} alias={self.alias}>'
+        return f'<Artist artist_id={self.artist_id} fname={self.fname} lname={self.lname} email={self.email} country={self.country} alias={self.alias} intro={self.intro}>'
 
 # create item class
 
