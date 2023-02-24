@@ -68,74 +68,108 @@
     </div>
 </div>
 
-<div class="container pt-5">
-    <h3>About me</h3>
-    <br>
-    <!-- <div class="card mb-3" style="max-width: 540px;"> -->
-    <div class="row g-0">
-        <div class="col-md-5">
-            <img src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677202595/Screenshot_2023-02-23_at_5.34.03_PM_amcsqr.png"
-                class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-7 d-flex align-items-center">
-            <div class="card-body">
-                <!-- <h5 class="card-title">About me</h5> -->
-                {% for artist in artists %}
-                <p class="aboutArtist lead my-4">{{ artist.about }}</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                {% endfor %}
-            </div>
+<section id="about-me">
+    <div class="container pt-5">
 
+        <h3>About me</h3>
+        <br>
+
+        <div class="row g-0">
+            <div class="col-md-5">
+                <img src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677202595/Screenshot_2023-02-23_at_5.34.03_PM_amcsqr.png"
+                    class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-7 d-flex align-items-center">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">About me</h5> -->
+                    {% for artist in artists %}
+                    <p class="aboutArtist lead my-4">{{ artist.about }}</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    {% endfor %}
+                </div>
+
+            </div>
         </div>
     </div>
-    <!-- </div> -->
-</div>
+</section>
 
 
-<div class="container pt-5">
-    <h3>Contact me</h3>
-    <!-- <div class="row justify-content-center"> -->
-    <div class="col-5 ">
-        <div class="mt-4">
-            <div class="card pb-4">
-                <div class="card-body">
-                    <!-- send post request to server to create new item and update database when added -->
-                    <form action='/profile' method="POST" class="row g-3">
-                        <div class="col-md-6">
-                            <label for="inputFname" class="form-label">First name *</label>
-                            <input type="text" class="form-control" id="inputFname" name="fname" required minlength='1'
-                                maxlength='50'>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputLname" class="form-label">Last name *</label>
-                            <input type="text" class="form-control" id="inputLname" name="lname" required minlength='1'
-                                maxlength='50'>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputPhone" class="form-label">Phone *</label>
-                            <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890"
-                                name="phone" required minlength='1' maxlength='50'>
-                        </div>
-                        <div class="md-6">
-                            <label for="email" class="form-label">Email * </label>
-                            <input type="email" class="form-control" id="emaillog" placeholder="jsmith@gmail.com"
-                                name="email" required minlength='1' maxlength='50'>
-                        </div>
-                        <div class="md-6">
-                            <label for="message" class="form-label">Message * </label>
-                            <textarea class="form-control" placeholder="Write your message here" id="floatingTextarea2"
-                                style="height: 100px"></textarea>
+<div class=" container pt-5">
+    <h3>Contact Me</h3>
+    <div class="row">
+        <div class=" col-5 " id="contactContainer1 ">
+            <div class="mt-4">
+                <div class="card  pb-4">
+                    <div class="card-body">
+                        <!-- <img class=contactImage
+                            src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674006183/s4_pnfdae.jpg" alt=""> -->
+                        <!-- <h5 class="card-title">Special title treatment</h5> -->
+                        <!-- <p class="card-text">eget nunc donec quis orci eget orci vehicula condimentum curabitur in
+                            libero ut massa volutpat convallis morbi od</p> -->
+
+                        <!-- <p>Follow me on: </p> -->
+                        <a href="default.asp"><img
+                                src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677210706/noun-instagram-5210110_casjyz.png"
+                                alt="Instagram" style="width:42px;height:42px;"></a>
+                        <br>
+                        <a href="default.asp"><img src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677211243/noun-pin-2047156_tzxfiz.png
+                                " Pinterest" style="width:42px;height:42px;"></a>
+                        <br>
+                        <div class='contactImageContainer'>
+                            <img class=contactImage
+                                src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677211523/Screenshot_2023-02-23_at_8.05.14_PM_zdrtn6.png"
+                                alt="">
                         </div>
 
-                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" col-5 " id="contactContainer2 ">
+            <div class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form action='/profile' method="POST" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputFname" class="form-label">First name *</label>
+                                <input type="text" class="form-control" id="inputFname" name="fname" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputLname" class="form-label">Last name *</label>
+                                <input type="text" class="form-control" id="inputLname" name="lname" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPhone" class="form-label">Phone *</label>
+                                <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890"
+                                    name="phone" required minlength='1' maxlength='50'>
+                            </div>
+                            <div class="md-6">
+                                <label for="email" class="form-label">Email * </label>
+                                <input type="email" class="form-control" id="emaillog" placeholder="jsmith@gmail.com"
+                                    name="email" required minlength='1' maxlength='50'>
+                            </div>
+                            <div class="md-6">
+                                <label for="message" class="form-label">Message * </label>
+                                <textarea class="form-control" placeholder="Write your message here"
+                                    id="floatingTextarea2" style="height: 100px"></textarea>
+                            </div>
+
+                            <button type="button" class="sendButton"> Send</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- </div> -->
 </div>
 
-<!-- </div> -->
+
+
 
 <script src="/static/js/ajax.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
