@@ -11,6 +11,7 @@ h5 {
   font-size: 18px;
 }
 
+
 .navbar a:active,
 .navbar a:hover {
   text-decoration: underline;
@@ -33,7 +34,8 @@ h5 {
   font-weight: 400;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-nav,
+.nav-link {
   color: rgb(0, 0, 0);
 }
 

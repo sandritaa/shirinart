@@ -20,20 +20,25 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <!-- <ul class="navbar-nav ms-auto flex-column"> -->
-            <li class="nav-item">
-                <a href="/" class="nav-link">home</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ login_button['route'] }}" class="nav-link">{{ login_button['label'] }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="/cart" class="nav-link">cart</a>
-            </li>
-        </ol>
-    </nav>
+    <!-- <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb"> -->
+    <ul class="navbar nav justify-content-end">
+        <!-- <ol class="breadcrumb"> -->
+        <!-- <ul class="navbar-nav ms-auto flex-column"> -->
+        <li class="nav-item">
+            <a href="/" class="nav-link">home</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ login_button['route'] }}" class="nav-link">{{ login_button['label'] }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="/cart" class="nav-link">cart</a>
+        </li>
+        <li class="nav-item">
+            <a href="/about" class="nav-link">about me</a>
+        </li>
+        <!-- </ol> -->
+    </ul>
+    <!-- </nav> -->
 
     <!-- PAGE CONTENT -->
     <div class="bodyContent">

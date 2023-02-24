@@ -272,6 +272,7 @@ def artist_add_item():
     color = request.form.get('color')
     in_stock = True
     picture_path = request.form.get('picture_path')
+    name = request.form.get('name')
 
     # convert date to right format
     date = datetime.strptime(date, "%Y-%m-%d")
@@ -281,7 +282,7 @@ def artist_add_item():
 
     # create a new item with the data from the form and the logged in artist (since an item belongs to an artist)
     item = crud.create_item(
-        description, dimensions, price, date, color, in_stock, picture_path, session['artist_id'])
+        description, dimensions, price, date, color, in_stock, picture_path, name, session['artist_id'])
     db.session.add(item)
     db.session.commit()
 

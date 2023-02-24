@@ -40,5 +40,5 @@ db.session.commit()
 items = mockdata['items']
 for item in items:
     db.session.add(crud.create_item(description=item['description'], dimensions=item['dimensions'], price=item['price'], date=datetime.strptime(
-        item['date'], "%Y-%m-%d"), color=item['color'], in_stock=item['in_stock'], picture_path=item['picture_path'], artist_id=item['artist_id']))
+        item['date'], "%Y-%m-%d"), color=item['color'], in_stock=item['in_stock'], picture_path=item['picture_path'], artist_id=item['artist_id'], name=item['name']))
 db.session.commit()

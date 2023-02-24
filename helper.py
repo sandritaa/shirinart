@@ -222,7 +222,8 @@ def order_data(session):
                 'price': item.price,
                 'dimensions': item.dimensions,
                 'picture_path': item.picture_path,
-                'alias': item.artist.alias
+                'alias': item.artist.alias,
+                'name': item.name
             }
 
             # append this dictionary to the list originally created
@@ -241,7 +242,8 @@ def order_data(session):
                 'price': item.price,
                 'dimensions': item.dimensions,
                 'picture_path': item.picture_path,
-                'alias': item.artist.alias
+                'alias': item.artist.alias,
+                'name': item.name
             }
 
             # append this dictionary to the list originally created

@@ -36,7 +36,7 @@
     <h1 class="mainHeading">{{ artist.fname + ' ' + artist.lname }}</h1>
 </div> -->
 <div class="container pt-5">
-    <h3>About me</h3>
+    <h3>Welcome</h3>
     <p class="aboutArtist lead my-4">{{ artist.about }}</p>
 </div>
 
@@ -51,13 +51,14 @@
             <div class="card pt-4 px-4">
                 <img class="card-img-top" src="{{ item.picture_path }}">
                 <div class="card-body">
-                    <p><b>Price: </b>${{item.price}}</p>
-                    <p><b>Color: </b>{{item.color}}</p>
-                    <p><b>Item ID: </b>{{item.item_id}}</p>
-                    <p><b>Dimensions: </b>{{item.dimensions}}"</p>
-                    <p><b>Description: </b>{{item.description}}</p>
+
+                    <p>{{item.name}}</p>
+                    <p>${{item.price}}</p>
+                    <p>{{item.description}}</p>
+                    <p>{{ item.dimensions}}</p>
+
                     <button type="button" id='{{ "buttonLike" + "_" + (item.item_id) | string }}'
-                        class='itemLikeButton customButton btn btn-light'>{{
+                        class='itemLikeButton customButton btn btn-light'> {{
                     button_like_label[item.item_id] }}</button>
                     <button type="button" id='{{ "buttonCart" + "_" + (item.item_id) | string }}'
                         class="itemCartButton customButton btn btn-light">{{
@@ -70,6 +71,57 @@
         {% endfor %}
     </div>
 </div>
+<!-- 
+<div class="container pt-5">
+
+    <h3>About me</h3>
+</div> -->
+
+
+<div class="container pt-5">
+    <h3>Contact me</h3>
+    <!-- <div class="row justify-content-center"> -->
+    <div class="col-5">
+        <div class="mt-4">
+            <div class="card pb-4">
+                <div class="card-body">
+                    <!-- send post request to server to create new item and update database when added -->
+                    <form action='/profile' method="POST" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputFname" class="form-label">First name *</label>
+                            <input type="text" class="form-control" id="inputFname" name="fname" required minlength='1'
+                                maxlength='50'>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLname" class="form-label">Last name *</label>
+                            <input type="text" class="form-control" id="inputLname" name="lname" required minlength='1'
+                                maxlength='50'>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPhone" class="form-label">Phone *</label>
+                            <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890"
+                                name="phone" required minlength='1' maxlength='50'>
+                        </div>
+                        <div class="md-6">
+                            <label for="email" class="form-label">Email * </label>
+                            <input type="email" class="form-control" id="emaillog" placeholder="jsmith@gmail.com"
+                                name="email" required minlength='1' maxlength='50'>
+                        </div>
+                        <div class="md-6">
+                            <label for="message" class="form-label">Message * </label>
+                            <textarea class="form-control" placeholder="Write your message here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
+
+<!-- </div> -->
 
 <script src="/static/js/ajax.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

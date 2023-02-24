@@ -71,9 +71,9 @@ def get_item_by_id(item_id):
 
 
 # create new item
-def create_item(description, dimensions, price, date, color, in_stock, picture_path, artist_id):
+def create_item(description, dimensions, price, date, color, in_stock, picture_path, artist_id, name):
     return Item(description=description, dimensions=dimensions, price=price,
-                date=date, color=color, in_stock=in_stock, picture_path=picture_path, artist_id=artist_id)
+                date=date, color=color, in_stock=in_stock, picture_path=picture_path, artist_id=artist_id, name=name)
 
 
 # delete item by id

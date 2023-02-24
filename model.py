@@ -73,6 +73,7 @@ class Item(db.Model):
     color = db.Column(db.String)
     in_stock = db.Column(db.Boolean)
     picture_path = db.Column(db.String)
+    name = db.Column(db.String)
 
     # add foreign keys
     order_id = db.Column(db.Integer, db.ForeignKey(
@@ -88,7 +89,7 @@ class Item(db.Model):
     # class representation
 
     def __repr__(self):
-        return f'<Item item_id={self.item_id} price={self.price} date={self.date} color={self.color} dimensions={self.dimensions} description={self.description}  in_stock={self.in_stock}>'
+        return f'<Item item_id={self.item_id} price={self.price} date={self.date} color={self.color} dimensions={self.dimensions} description={self.description}  in_stock={self.in_stock}, name={self.name}>'
 
 
 # create favorite items class
