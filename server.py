@@ -31,6 +31,9 @@ def homepage():
     # get login or logout depending if a customer/artist is logged in or not
     login_button = helper.switch_profile_login(session)
 
+    # # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
+    # artist = crud.get_artist_by_alias(alias)
+
     for artist in artists:
         # favorite item button label for when the page is loaded
         button_like_label = helper.get_favitem_button_label(artist, session)
@@ -43,11 +46,11 @@ def homepage():
 
 
 # create the dynamic artist gallery route - the dynamic part is given by the artist <alias> of the artist which was selected on the client side
-# @app.route('/gallery/<alias>')
+# @app.route('/<alias>')
 # def gallery(alias):
 
-#     # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
-#     artist = crud.get_artist_by_alias(alias)
+    # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
+    # artist = crud.get_artist_by_alias(alias)
 
 #     # get login or logout depending if a customer/artist is logged in or not
 #     login_button = helper.switch_profile_login(session)
@@ -59,7 +62,7 @@ def homepage():
 #     button_cart_label = helper.get_cart_button_label(artist, session)
 
     # render the gallery.html and pass the selected artist, the login button and the favitem button label as data
-    # return render_template("gallery.html", artist=artist, login_button=login_button, button_like_label=button_like_label, button_cart_label=button_cart_label)
+    # return render_template("home.html", artist=artist)
 
 
 # create home route for POST request

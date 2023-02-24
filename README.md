@@ -1,4 +1,4 @@
-# Galleria Milena
+# MadalasArt
 
 MadalasArt is a web application that allows for an artist to showcase and sell their artwork. As an artist, you can upload your art pieces to the web application using the Cloudinary API and sell them through your own personalized virtual gallery. You can also view all the orders you have in place and send order updates directly to your customer’s inbox using the Twilio SendGrid API. As a customer, you can view all of the artists gallery and purchase a multiple items from the artist in one transaction. As a subscribed customer, you are also able to like different art pieces and keep track of your orders.
 
