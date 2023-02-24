@@ -22,10 +22,44 @@ def homepage():
     login_button = helper.switch_profile_login(session)
 
     # query all artists to display on homepage
-    artist = crud.get_all_artists()
+    artists = crud.get_all_artists()
+    print(artists)
+
+    # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
+    # artist = crud.get_artist_by_alias(alias)
+
+    # get login or logout depending if a customer/artist is logged in or not
+    login_button = helper.switch_profile_login(session)
+
+    for artist in artists:
+        # favorite item button label for when the page is loaded
+        button_like_label = helper.get_favitem_button_label(artist, session)
+
+        # cart item button label for when the page is loaded
+        button_cart_label = helper.get_cart_button_label(artist, session)
 
     # render an html and pass artists and login_button as data
-    return render_template("home.html",  artists=artist, login_button=login_button)
+    return render_template("home.html",  artists=artists, login_button=login_button, button_like_label=button_like_label, button_cart_label=button_cart_label)
+
+
+# create the dynamic artist gallery route - the dynamic part is given by the artist <alias> of the artist which was selected on the client side
+# @app.route('/gallery/<alias>')
+# def gallery(alias):
+
+#     # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
+#     artist = crud.get_artist_by_alias(alias)
+
+#     # get login or logout depending if a customer/artist is logged in or not
+#     login_button = helper.switch_profile_login(session)
+
+#     # favorite item button label for when the page is loaded
+#     button_like_label = helper.get_favitem_button_label(artist, session)
+
+#     # cart item button label for when the page is loaded
+#     button_cart_label = helper.get_cart_button_label(artist, session)
+
+    # render the gallery.html and pass the selected artist, the login button and the favitem button label as data
+    # return render_template("gallery.html", artist=artist, login_button=login_button, button_like_label=button_like_label, button_cart_label=button_cart_label)
 
 
 # create home route for POST request
@@ -53,26 +87,6 @@ def profile_logout_and_delete():
 
     # finally go back to the home route for GET request
     return redirect('/')
-
-
-# create the dynamic artist gallery route - the dynamic part is given by the artist <alias> of the artist which was selected on the client side
-@app.route('/gallery/<alias>')
-def gallery(alias):
-
-    # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template
-    artist = crud.get_artist_by_alias(alias)
-
-    # get login or logout depending if a customer/artist is logged in or not
-    login_button = helper.switch_profile_login(session)
-
-    # favorite item button label for when the page is loaded
-    button_like_label = helper.get_favitem_button_label(artist, session)
-
-    # cart item button label for when the page is loaded
-    button_cart_label = helper.get_cart_button_label(artist, session)
-
-    # render the gallery.html and pass the selected artist, the login button and the favitem button label as data
-    return render_template("gallery.html", artist=artist, login_button=login_button, button_like_label=button_like_label, button_cart_label=button_cart_label)
 
 
 # create login route
