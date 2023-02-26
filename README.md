@@ -1,6 +1,6 @@
 # MadalasArt
 
-MadalasArt is a web application that allows for an artist to showcase and sell their artwork. As an artist, you can upload your art pieces to the web application using the Cloudinary API and sell them through your own personalized virtual gallery. You can also view all the orders you have in place and send order updates directly to your customer’s inbox using the Twilio SendGrid API. As a customer, you can view all of the artists gallery and purchase a multiple items from the artist in one transaction. As a subscribed customer, you are also able to like different art pieces and keep track of your orders.
+MadalasArt is a web application that allows for an artist to showcase and sell their artwork. As an artist, you can upload your art pieces to the web application using the Cloudinary API and sell them through your own personalized virtual gallery. You can also view all the orders you have in place and send order updates directly to your customer’s inbox using the Twilio SendGrid API. As a customer, you can view the artist gallery and purchase a multiple items from the artist in one transaction. As a subscribed customer, you are also able to like different art pieces and keep track of your orders.
 
 ## About the developer
 
@@ -52,7 +52,7 @@ You can login as a customer using as credentials:
 
 ![alt text](/static/styles/img/customer_login.png)
 
-Once you are logged in as a customer you can browse around the different artists' galleries to admire the art and do some of the following things:
+Once you are logged in as a customer you can browse around the artist gallery to admire the art and do some of the following things:
 
 - Like items
 - Add items to the cart
