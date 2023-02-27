@@ -3,7 +3,7 @@
         {
             "fname": "Shirin",
             "lname": "Haghi",
-            "email": "shirin@gmail.com",
+            "email": "shirinsmandalas@gmail.com",
             "password": "testtest",
             "country": "Persia",
             "alias": "shirin",
@@ -94,14 +94,14 @@
             "artist_id": 1
         },
         {
-            "name": "Gilded Bordeaux",
-            "description": "This mandala art piece is created with vibrant hues of blue, gold, and red using fine-tipped markers and a compass for precision geometric shapes.",
+            "name": "Lilac Dusk",
+            "description": "This mandala art features a captivating blend of purple and pink tones, which are highlighted by accents of shimmering silver.",
             "dimensions": "40x40",
-            "price": 80.00,
-            "date": "2022-01-18",
-            "color": "Blue",
+            "price": 40.00,
+            "date": "2022-12-18",
+            "color": "Pink",
             "in_stock": true,
-            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674795796/IMG_4443_ipfofg.jpg",
+            "picture_path": "https://res.cloudinary.com/dxsxg4nkp/image/upload/v1674851273/a0r7uxzv6ohnmvdyf9ww.jpg",
             "artist_id": 1
         }
     ]
