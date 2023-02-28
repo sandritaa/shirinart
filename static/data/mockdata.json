@@ -38,7 +38,7 @@
     ],
     "items": [
         {   "name": "Verdant",
-            "description": "This mandala art piece is created with vibrant hues of blue, green, and yellow using fine-tipped markers and a compass for precision geometric shapes.",
+            "description": "This mandala art piece is created with vibrant hues of blue, green, and yellow using fine-tipped markers and a compass for precision geometric shapes",
             "dimensions": "16x16",
             "price": 30.00,
             "date": "2022-12-07",
@@ -95,7 +95,7 @@
         },
         {
             "name": "Lilac Dusk",
-            "description": "This mandala art features a captivating blend of purple and pink tones, which are highlighted by accents of shimmering silver.",
+            "description": "This stunning mandala art showcases a mesmerizing combination of pink and purple hues, perfectly accentuated by shimmering silver details",
             "dimensions": "40x40",
             "price": 40.00,
             "date": "2022-12-18",

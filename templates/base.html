@@ -18,48 +18,51 @@
 </head>
 
 <body>
+    <div id="page-container">
+        <div id="content-wrap">
 
+            <!-- NAVBAR -->
 
-    <!-- NAVBAR -->
+            <div class="topbar">
+                <ul class="navbar nav justify-content-end ">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ login_button['route'] }}" class="nav-link">{{ login_button['label'] }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link">cart</a>
+                    </li>
+                </ul>
 
-    <div class="topbar">
-        <ul class="navbar nav justify-content-end ">
-            <li class="nav-item">
-                <a href="/" class="nav-link">home</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ login_button['route'] }}" class="nav-link">{{ login_button['label'] }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="/cart" class="nav-link">cart</a>
-            </li>
-        </ul>
+                <div class="text-dark py-sm-5 topbarMain">
+                    <h1 class="mainHeading">shirin haghi</h1>
+                </div>
+            </div>
 
-        <div class="text-dark py-sm-5 topbar">
-            <h1 class="mainHeading">shirin haghi</h1>
+            <!-- PAGE CONTENT -->
+            <div class="bodyContent">
+                {% block body %}
+                {% endblock %}
+            </div>
+
+            <script>
+                let currentPage = window.location.pathname;
+                let links = document.querySelectorAll('.nav-link');
+
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
+                    }
+                });
+            </script>
         </div>
+        <footer class="footer">
+            <p>By: Milena's Atelier © 2023</p>
+
+        </footer>
     </div>
-
-    <!-- PAGE CONTENT -->
-    <div class="bodyContent">
-        {% block body %}
-        {% endblock %}
-    </div>
-
-    <script>
-        let currentPage = window.location.pathname;
-        let links = document.querySelectorAll('.nav-link');
-
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    </script>
-
-    <footer class="footer">
-        <p>By: Milena's Atelier © 2023</p>
-    </footer>
 
 </body>
 

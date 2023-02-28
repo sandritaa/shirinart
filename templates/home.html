@@ -4,7 +4,7 @@
 <!-- insert content block -->
 {% block body %}
 
-
+<!-- ************ CAROUSEL ************ -->
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -29,6 +29,8 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+<!-- ************ INTRO************ -->
 {% for artist in artists %}
 <div class="container pt-5">
     <h3>Welcome</h3>
@@ -37,6 +39,7 @@
 
 {% endfor %}
 
+<!-- ************ ITEMS ************ -->
 <div class="container pt-5">
     <div class="row row-cols-1 row-cols-lg-3">
         {% for artist in artists %}
@@ -52,13 +55,14 @@
                     <p>{{item.description}}</p>
                     <p>Dimensions: {{ item.dimensions}}"</p>
 
-
                     <button type="button" id='{{ "buttonCart" + "_" + (item.item_id) | string }}'
                         class="itemCartButton customButton btn btn-light">{{
                     button_cart_label[item.item_id] }}</button>
+
                     <button type="button" id='{{ "buttonLike" + "_" + (item.item_id) | string }}'
                         class='itemLikeButton likeButtonCustom btn btn-light'> {{
                 button_like_label[item.item_id] }}</button>
+
                 </div>
             </div>
         </div>
@@ -68,12 +72,11 @@
     </div>
 </div>
 
+<!-- ************ ABOUT ME ************ -->
 <section id="about-me">
     <div class="container pt-5">
-
         <h3>About me</h3>
         <br>
-
         <div class="row g-0">
             <div class="col-md-5">
                 <img src="https://res.cloudinary.com/dxsxg4nkp/image/upload/v1677202595/Screenshot_2023-02-23_at_5.34.03_PM_amcsqr.png"
@@ -87,16 +90,54 @@
                     <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                     {% endfor %}
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-
 <div class=" container pt-5">
     <h3>Contact Me</h3>
     <div class="row">
+        <!-- ************ CONTACT FORM ************ -->
+        <div class=" col-5 " id="contactContainer2 ">
+            <div class="mt-4">
+                <div class="card">
+                    <div class="card-body2">
+                        <form action='/profile' method="POST" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputFname" class="form-label">First name *</label>
+                                <input type="text" class="form-control" id="inputFname" name="fname" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputLname" class="form-label">Last name *</label>
+                                <input type="text" class="form-control" id="inputLname" name="lname" required
+                                    minlength='1' maxlength='50'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPhone" class="form-label">Phone *</label>
+                                <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890"
+                                    name="phone" required minlength='1' maxlength='50'>
+                            </div>
+                            <div class="md-6">
+                                <label for="email" class="form-label">Email * </label>
+                                <input type="email" class="form-control" id="emaillog" placeholder="jsmith@example.com"
+                                    name="email" required minlength='1' maxlength='50'>
+                            </div>
+                            <div class="md-6">
+                                <label for="message" class="form-label">Message * </label>
+                                <textarea class="form-control" placeholder="Write your message here"
+                                    id="floatingTextarea2" style="height: 100px"></textarea>
+                            </div>
+                            <div class="md-6">
+                                <button type="button" class="sendButton"> Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ************ SOCIAL MEDIA ************ -->
         <div class=" col-5 " id="contactContainer1 ">
             <div class="mt-4">
                 <div class="card  pb-4">
@@ -126,51 +167,8 @@
                 </div>
             </div>
         </div>
-
-
-        <div class=" col-5 " id="contactContainer2 ">
-            <div class="mt-4">
-                <div class="card">
-                    <div class="card-body">
-                        <form action='/profile' method="POST" class="row g-3">
-                            <div class="col-md-6">
-                                <label for="inputFname" class="form-label">First name *</label>
-                                <input type="text" class="form-control" id="inputFname" name="fname" required
-                                    minlength='1' maxlength='50'>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputLname" class="form-label">Last name *</label>
-                                <input type="text" class="form-control" id="inputLname" name="lname" required
-                                    minlength='1' maxlength='50'>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputPhone" class="form-label">Phone *</label>
-                                <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890"
-                                    name="phone" required minlength='1' maxlength='50'>
-                            </div>
-                            <div class="md-6">
-                                <label for="email" class="form-label">Email * </label>
-                                <input type="email" class="form-control" id="emaillog" placeholder="jsmith@example.com"
-                                    name="email" required minlength='1' maxlength='50'>
-                            </div>
-                            <div class="md-6">
-                                <label for="message" class="form-label">Message * </label>
-                                <textarea class="form-control" placeholder="Write your message here"
-                                    id="floatingTextarea2" style="height: 100px"></textarea>
-                            </div>
-
-                            <button type="button" class="sendButton"> Send</button>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
-
-
-
 
 <script src="/static/js/ajax.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
