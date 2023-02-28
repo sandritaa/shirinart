@@ -46,7 +46,7 @@ def homepage():
 
 
 # create the dynamic artist gallery route - the dynamic part is given by the artist <alias> of the artist which was selected on the client side
-# @app.route('/<alias>')
+# @app.route('gallery/<alias>')
 # def gallery(alias):
 
     # Given the artist alias, query the artist selected and pass the required info (all of it?) to the template

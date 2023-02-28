@@ -121,8 +121,7 @@
                         {% for favitem in customer.favitem %}
                         <div class="my-2">
                             <div class="card pt-4 px-4">
-                                <a href="{{ url_for('gallery', alias = favitem.item.artist.alias) }}"><img
-                                        src="{{ favitem.item.picture_path }}" class="card-img-top-thumbnail"
+                                <a href="/"><img src="{{ favitem.item.picture_path }}" class="card-img-top-thumbnail"
                                         style="padding-bottom: 1px;"></a>
                                 <div class="card-body">
                                     <ul>
