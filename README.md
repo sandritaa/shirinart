@@ -35,15 +35,11 @@ After having followed the installation instructions listed further down, you can
 - Email: shirin@gmail.com
 - Password: testtest
 
-![alt text](/static/styles/img/artist_login.png)
-
 Once you login as an artist, you can access the admin page from where it is possible to:
 
 - Add a new item to the gallery using the Cloudinary API
 - Remove an item from the gallery
 - Update an order status; this will automatically send an update via email to the customer using the Twilio SendGrid API
-
-![alt text](/static/styles/img/admin.png)
 
 ### Login as a customer
 
@@ -52,8 +48,6 @@ You can login as a customer using as credentials:
 - Email: john@gmail.com
 - Password: testtest
 
-![alt text](/static/styles/img/customer_login.png)
-
 Once you are logged in as a customer you can browse around the artist gallery to admire the art and do some of the following things:
 
 - Like items
@@ -61,11 +55,7 @@ Once you are logged in as a customer you can browse around the artist gallery to
 
 You can then proceed to checkout by clicking on the cart and create new order(s) by entering your shipping, billing and payment details. Before proceeding to checkout, you still have the possibility to remove items from the cart if you change your mind. Note that the transaction is at this stage a fake transaction.
 
-![alt text](/static/styles/img/cart.png)
-
 You can then click on profile and keep track of your previous orders, which artists you are following and which items you liked.
-
-![alt text](/static/styles/img/profile.png)
 
 You can also shop if you are not logged in as a customer but you will not be able to like items and follow artists.
 
